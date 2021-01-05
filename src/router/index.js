@@ -6,7 +6,6 @@ import UserHome from "../pages/UserHome/UserHome";
 import Book from "../pages/Book/Book";
 import Register from "../pages/Register/Register";
 import Admin from "../pages/AdminHome/Admin";
-import BookTopic from "../pages/BookList/BookTopic";
 import BookList from "../components/AdminHome/bookNav/book/BookList";
 import AddBook from "../components/AdminHome/bookNav/book/components/BookDetail";
 import OrderList from "../components/AdminHome/orderNav/OrderList";
@@ -20,10 +19,6 @@ import UpdateSecondSort from "../components/AdminHome/bookNav/sort/UpdateSecondS
 import FirstSortList from "../components/AdminHome/bookNav/sort/FirstSortList";
 import SecondSortList from "../components/AdminHome/bookNav/sort/SecondSortList";
 import UpdateBook from "../components/AdminHome/bookNav/book/UpdateBook";
-import BookTopicDetail from "../components/AdminHome/bookNav/topic/component/BookTopicDetail";
-import UpdateBookTopic from "../components/AdminHome/bookNav/topic/UpdateBookTopic";
-import AddBookTopic from "../components/AdminHome/bookNav/topic/AddBookTopic";
-import SubTopicList from "../components/AdminHome/bookNav/topic/SubTopicList";
 import Address from "../components/UserHome/home/Address";
 import UserCenter from "../components/UserHome/home/UserCenter";
 import PwdManage from "../components/UserHome/manage/PwdManage";
@@ -193,47 +188,6 @@ export default new Router({
             url: '/admin/userList',
             requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
           },
-        },
-
-        {
-          path: 'bookTopicDetail',
-          name: "BookTopicDetail",
-          component: BookTopicDetail,
-          meta: {
-            title: '书单详情',
-            url: '/admin/bookTopicDetail',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: "updateBookTopic",
-          name: "UpdateBookTopic",
-          component: UpdateBookTopic,
-          meta: {
-            title: '更新书单',
-            url: '/admin/updateBookTopic',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: "addBookTopic",
-          name: "AddBookTopic",
-          component: AddBookTopic,
-          meta: {
-            title: '添加书单',
-            url: '/admin/addBookTopic',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: 'subTopicList',
-          name: "SubTopicList",
-          component: SubTopicList,
-          meta: {
-            title: '子书单',
-            url: '/admin/subTopicList',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
         }
       ]
     },
@@ -279,11 +233,6 @@ export default new Router({
           component: UserOrderDetail
         }
       ]
-    },
-    {
-      path: '/bookTopic',
-      name: 'BookTopic',
-      component: BookTopic
     },
     {
       path: '/book',

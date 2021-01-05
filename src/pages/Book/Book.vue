@@ -31,7 +31,7 @@
         </div>
         <div class="book_content">
           <span class="labelSpan">上架时间</span>
-          2020-03-26
+          2020-12-26
         </div>
         <div class="book_content">
           <span class="labelSpan">库存</span>
@@ -58,9 +58,6 @@
             <div class="product">
               <div class="markdown-body" v-html="book.description"></div>
             </div>
-          </el-tab-pane>
-          <el-tab-pane label="店铺评价" name="second">
-            <div class="evaluation"></div>
           </el-tab-pane>
         </el-tabs>
       </div>

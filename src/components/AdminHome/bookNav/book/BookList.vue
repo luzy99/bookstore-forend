@@ -203,7 +203,6 @@
 </template>
 
 <script>
-    import {reqGetPublishNames} from "../../../../api/publish";
     import {reqGetSortList} from "../../../../api/sort";
     import {reqGetBookList,reqDelBook,reqModifyPut,reqModifyRec,reqModifyNew} from "../../../../api/book";
     import axios from 'axios';

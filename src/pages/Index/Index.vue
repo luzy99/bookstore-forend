@@ -127,7 +127,6 @@
     import BookBox from "../../components/Index/BookBox";
     import RecBookBox from "../../components/Index/RecBookBox";
     import {reqGetSortList} from "../../api/sort";
-    import {reqGetTopicList} from "../../api/bookTopic";
 
     export default {
         name: "index",
@@ -166,22 +165,6 @@
             out(index){
                 this.seen = false;
                 this.current = null;
-            },
-
-            //得到书单列表
-            GetTopic(page,pageSize){
-                this.loading=false;
-                reqGetTopicList(page,pageSize).then(response=>{
-                    if(response.code==200){
-                        this.bookTopicList = [];
-                        let list = response.bookTopicList;
-                        for(let i=0;i<list.length;i++){
-                            this.bookTopicList.push({cover:list[i].cover,id:list[i].id});
-                        }
-                    }
-                }).catch(err=>{
-                    console.log(err);
-                })
             },
 
             getName(upperName,childName){
@@ -266,7 +249,6 @@
             this.getSortList();
         },
         created() {
-            this.GetTopic(1,5);
             // this.getSortList();
         },
     }

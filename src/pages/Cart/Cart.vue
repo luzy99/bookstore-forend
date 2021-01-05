@@ -98,7 +98,7 @@
 
 
     export default {
-        name: "BookTopic",
+        name: "Cart",
         components:{Nav,HeadNav,Footer},
 
         data(){

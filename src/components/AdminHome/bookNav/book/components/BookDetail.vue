@@ -116,7 +116,6 @@
 </template>
 
 <script>
-    import {reqGetPublishNames} from "../../../../../api/publish";
     import {reqGetSortList} from "../../../../../api/sort";
     import {reqAddBook,reqGetBookImgPathList,reqGetBook,reqDelBookImg,reqModifyBook} from "../../../../../api/book";
     export default {

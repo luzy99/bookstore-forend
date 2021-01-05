@@ -163,7 +163,6 @@
 </template>
 
 <script>
-    import {reqGetPublishNames} from "../../../api/publish";
     import {reqAdminGetOrderList,reqDelOrder} from "../../../api/order";
     import axios from 'axios';
     export default {
