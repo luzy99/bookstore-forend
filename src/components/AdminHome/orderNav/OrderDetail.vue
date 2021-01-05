@@ -197,7 +197,7 @@
                 active: 2,
                 operatorList:[
                     {
-                        name: "黄龙",
+                        name: "志文",
                         operateTime:null,
                         orderStatus: null,
                         logisticsStatus: null,//发货状态

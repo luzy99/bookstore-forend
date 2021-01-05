@@ -54,7 +54,7 @@
               <el-dropdown-item><a href="#/">退出</a></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>黄龙</span>
+          <span>志文</span>
         </el-header>
 
         <el-main>

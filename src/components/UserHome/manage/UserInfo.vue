@@ -6,7 +6,7 @@
                   :src="imgS"
                   fit="fill"></el-image>
         <div class="user_card_info">
-          <p style="font-size: 22px;color: #616161">一条小黄龙</p>
+          <p style="font-size: 22px;color: #616161">志文</p>
           <p style="color: #757575">修改头像</p>
         </div>
       </div>

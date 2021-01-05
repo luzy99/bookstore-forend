@@ -16,7 +16,6 @@ export const reqModifyTopic = (bookTopic) => ajax(BASE_URL+'/modifyTopic', {
   put: bookTopic.put
 }, 'POST')
 
-export const reqModifyRank = (id,rank) => ajax(BASE_URL+"/modifyTopicRank",{id,rank})
 export const reqModifyPut = (id,put) => ajax(BASE_URL+"/modifyTopicPut",{id,put})
 
 export const reqDelTopic = (id) => ajax(BASE_URL+"/delTopic",{id})

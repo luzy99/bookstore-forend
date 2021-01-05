@@ -44,8 +44,6 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="/admin/userList">用户列表</el-menu-item>
-<!--              <el-menu-item index="/admin/rolesList">角色列表</el-menu-item>-->
-<!--              <el-menu-item index="/admin/menuList">菜单列表</el-menu-item>-->
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -75,7 +73,7 @@
               <el-dropdown-item><a @click="logout">退出</a></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>黄龙</span>
+          <span>志文</span>
         </el-header>
 
         <el-main>

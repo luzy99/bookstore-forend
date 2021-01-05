@@ -15,7 +15,6 @@ export const reqAddBook = (book) => ajax(BASE_URL+'/addBook', {
   description: book.description,
   put: book.put,
   bookName: book.bookName,
-  rank: book.rank,
   newProduct: book.newProduct,
   recommend: book.recommend,
   bookSort: book.bookSort
@@ -32,7 +31,6 @@ export const reqModifyBook = (book) => ajax(BASE_URL+'/modifyBook', {
   description: book.description,
   put: book.put,
   bookName: book.bookName,
-  rank: book.rank,
   newProduct: book.newProduct,
   recommend: book.recommend,
   bookSort: book.bookSort,
