@@ -12,11 +12,6 @@ import BookTopic from "../pages/BookList/BookTopic";
 import BookList from "../components/AdminHome/bookNav/book/BookList";
 import AddBook from "../components/AdminHome/bookNav/book/components/BookDetail";
 import OrderList from "../components/AdminHome/orderNav/OrderList";
-import OrderSet from "../components/AdminHome/orderNav/OrderSet";
-import ReturnOrder from "../components/AdminHome/orderNav/ReturnOrder";
-import ReturnReason from "../components/AdminHome/orderNav/ReturnReason";
-import BookRecommend from "../components/AdminHome/market/BookRecommend";
-import SpikeSet from "../components/AdminHome/market/SpikeSet";
 import MenuList from "../components/AdminHome/authority/MenuList";
 import RolesList from "../components/AdminHome/authority/RolesList";
 import UserList from "../components/AdminHome/authority/UserList";
@@ -31,11 +26,8 @@ import CheckBoxTest from "../components/Test/CheckBoxTest";
 import cascaderTest from "../components/Test/cascaderTest";
 import Blog from "../components/Test/Blog";
 import AddSort from "../components/AdminHome/bookNav/sort/components/SortDetail";
-import Publish from "../components/AdminHome/bookNav/publish/Publish";
 import RouterTest from "../components/Test/RouterTest";
 import TestRouter from "../components/Test/TestRouter";
-import AddPublish from "../components/AdminHome/bookNav/publish/AddPublish";
-import UpdatePublish from "../components/AdminHome/bookNav/publish/UpdatePublish";
 import SwitchTest from "../components/Test/SwitchTest";
 import UpdateFirstSort from "../components/AdminHome/bookNav/sort/UpdateFirstSort";
 import UpdateSecondSort from "../components/AdminHome/bookNav/sort/UpdateSecondSort";
@@ -128,36 +120,6 @@ export default new Router({
           },
         },
         {
-          path: 'publish',
-          name: 'Publish',
-          component: Publish,
-          meta: {
-            title: '出版社列表',
-            url: '/admin/publish',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: 'addPublish',
-          name: 'AddPublish',
-          component: AddPublish,
-          meta: {
-            title: '添加出版社',
-            url: '/admin/addPublish',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: 'updatePublish',
-          name: 'UpdatePublish',
-          component: UpdatePublish,
-          meta: {
-            title: '更新出版社',
-            url: '/admin/updatePublish',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
           path: 'addSort',
           name: 'AddSort',
           component: AddSort,
@@ -218,16 +180,6 @@ export default new Router({
           },
         },
         {
-          path: 'orderSet',
-          name: 'OrderSet',
-          component: OrderSet,
-          meta: {
-            title: '订单设置',
-            url: '/admin/orderSet',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
           path: 'orderDetail',
           name: 'OrderDetail',
           component: OrderDetail,
@@ -248,52 +200,12 @@ export default new Router({
           },
         },
         {
-          path: 'returnOrder',
-          name: 'ReturnOrder',
-          component: ReturnOrder,
-          meta: {
-            title: '退单页面',
-            url: '/admin/returnOrder',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: 'returnReason',
-          name: 'ReturnReason',
-          component: ReturnReason,
-          meta: {
-            title: '退单理由',
-            url: '/admin/returnReason',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: 'bookRecommend',
-          name: 'BookRecommend',
-          component: BookRecommend,
-          meta: {
-            title: '图书推荐',
-            url: '/admin/bookRecommend',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
           path: 'bookTopicSet',
           name: 'BookTopicSet',
           component: BookTopicSet,
           meta: {
             title: '图单专题',
             url: '/admin/bookTopicSet',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
-          path: 'spikeSet',
-          name: 'SpikeSet',
-          component: SpikeSet,
-          meta: {
-            title: '秒杀设置',
-            url: '/admin/spikeSet',
             requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
           },
         },

@@ -26,7 +26,6 @@
               <el-menu-item index="/admin/bookList">图书列表</el-menu-item>
               <el-menu-item index="/admin/addBook">添加图书</el-menu-item>
               <el-menu-item index="/admin/FirstSortList">图书分类</el-menu-item>
-              <el-menu-item index="/admin/publish">出版社管理</el-menu-item>
               <el-menu-item index="/admin/bookTopicSet">书单专题</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -37,19 +36,6 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="/admin/orderList">订单列表</el-menu-item>
-              <el-menu-item index="/admin/orderSet">订单设置</el-menu-item>
-              <el-menu-item index="/admin/returnOrder">退货申请处理</el-menu-item>
-              <el-menu-item index="/admin/returnReason">退货原因设置</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="4">
-            <template slot="title">
-              <i class="el-icon-shopping-bag-1"></i>
-              <span slot="title">营销</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/admin/spikeSet">秒杀活动</el-menu-item>
-              <el-menu-item index="/admin/bookRecommend">人气推荐</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="5">
