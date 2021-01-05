@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="content">
-      <p>© 2020 南昌大学软件学院 黄龙 版权所有</p>
+      <p>© 2020 东南大学软件学院 陆舟洋，徐志文，钱会川</p>
     </div>
   </div>
 </template>

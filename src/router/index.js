@@ -16,7 +16,6 @@ import OrderSet from "../components/AdminHome/orderNav/OrderSet";
 import ReturnOrder from "../components/AdminHome/orderNav/ReturnOrder";
 import ReturnReason from "../components/AdminHome/orderNav/ReturnReason";
 import BookRecommend from "../components/AdminHome/market/BookRecommend";
-import Coupon from "../components/AdminHome/market/Coupon";
 import SpikeSet from "../components/AdminHome/market/SpikeSet";
 import MenuList from "../components/AdminHome/authority/MenuList";
 import RolesList from "../components/AdminHome/authority/RolesList";
@@ -48,7 +47,6 @@ import UpdateBookTopic from "../components/AdminHome/bookNav/topic/UpdateBookTop
 import AddBookTopic from "../components/AdminHome/bookNav/topic/AddBookTopic";
 import SubTopicList from "../components/AdminHome/bookNav/topic/SubTopicList";
 import Address from "../components/UserHome/home/Address";
-import MesNotice from "../components/UserHome/home/MesNotice";
 import UserCenter from "../components/UserHome/home/UserCenter";
 import PwdManage from "../components/UserHome/manage/PwdManage";
 import UserInfo from "../components/UserHome/manage/UserInfo";
@@ -56,7 +54,6 @@ import Evaluate from "../components/UserHome/order/Evaluate";
 import UserOrder from "../components/UserHome/order/UserOrder";
 import ApplyService from "../components/UserHome/service/ApplyService";
 import Record from "../components/UserHome/service/Record";
-import UserCoupon from "../components/UserHome/home/UserCoupon";
 import BuyPage from "../pages/BuyPage/BuyPage";
 import OrderDetail from "../components/AdminHome/orderNav/OrderDetail";
 import Deliver from "../components/AdminHome/orderNav/Deliver";
@@ -293,16 +290,6 @@ export default new Router({
           },
         },
         {
-          path: 'coupon',
-          name: 'Coupon',
-          component: Coupon,
-          meta: {
-            title: '优惠券',
-            url: '/admin/coupon',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
           path: 'spikeSet',
           name: 'SpikeSet',
           component: SpikeSet,
@@ -400,16 +387,6 @@ export default new Router({
           path: 'address',
           name: "Address",
           component: Address
-        },
-        {
-          path: 'coupon',
-          name: "Coupon",
-          component: UserCoupon
-        },
-        {
-          path: 'mesNotice',
-          name: "MesNotice",
-          component: MesNotice
         },
         {
           path: 'userCenter',

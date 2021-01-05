@@ -50,7 +50,6 @@
             <el-menu-item-group>
               <el-menu-item index="/admin/spikeSet">秒杀活动</el-menu-item>
               <el-menu-item index="/admin/bookRecommend">人气推荐</el-menu-item>
-              <el-menu-item index="/admin/coupon">优惠券</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="5">

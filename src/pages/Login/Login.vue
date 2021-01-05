@@ -73,46 +73,6 @@
                 let _this = this;
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        // let param = new URLSearchParams()
-                        // param.append('account', this.ruleForm.account)
-                        // param.append('password', this.ruleForm.password)
-                        // axios({
-                        //     method: 'POST',
-                        //     url: 'api/login',
-                        //     headers: {
-                        //         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                        //     },
-                        //     data:{
-                        //         'account': this.ruleForm.account,
-                        //         'password': this.ruleForm.password
-                        //     }
-                        // }).then((response) => {
-                        //     console.log("登陆后返回的response："+response);
-                        //     console.log(response.data);
-                        //     let jwt = response.headers['authorization']
-                        //     console.log("====jwt:=== "+jwt);
-                        //     if(response.data.code == 200){
-                        //         console.log("登录成功");
-                        //         console.log(response);
-                        //         // const jwt = response.headers['authorization']
-                        //         // console.log("jwt: "+jwt);
-                        //         // //把数据共享出去
-                        //         // _this.$store.commit("SET_TOKEN", jwt)
-                        //         // _this.$store.commit("SET_USERINFO", response.data.userInfo)
-                        //         // console.log("返回来的SET_USERINFO:"+response.data.userInfo)
-                        //         // this.$router.push({path:'/devHome/appList'});
-                        //     }else {
-                        //         this.$message({
-                        //             type: 'waring',
-                        //             message: "登录失败"
-                        //         })
-                        //     }
-                        // }).catch(err=>{
-                        //     this.$message({
-                        //         type: 'waring',
-                        //         message: "登录失败"
-                        //     })
-                        // })
                         console.log("=====开始登陆=======")
                         reqLogin({
                             account: this.ruleForm.account,

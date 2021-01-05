@@ -14,7 +14,7 @@ import 'mavon-editor/dist/css/index.css'
 import echarts from "echarts"
 
 import "./axios"
-import "./permission"
+// import "./permission"
 
 Vue.prototype.$echarts = echarts
 Vue.use(mavonEditor)

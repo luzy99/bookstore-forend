@@ -91,7 +91,7 @@
                   </div>
                   <div class="communicate">
                     <i class="el-icon-phone"></i><span>书店客服中心</span><br>
-                    <span>预约电话 010-8430 857</span>
+                    <span>客服热线 025-1234 5678</span>
                   </div>
                 </div>
                 <div class="content_main_right">
@@ -100,7 +100,6 @@
                     <span>最新出版</span>
                   </div>
                   <GalleryBook></GalleryBook>
-                  <SpikeBox></SpikeBox>
                 </div>
             </el-tab-pane>
             <el-tab-pane label="新书区" name="second">新书区</el-tab-pane>
@@ -109,21 +108,11 @@
         </div>
       </div>
     </div>
-    <div class="second_content">
-      <div class="book_box">
-        <RecBookBox :list-sort="recommend"></RecBookBox>
-      </div>
-    </div>
-    <div class="first_content">
-      <div class="book_box">
-        <RecBookBox :list-sort="newProduct"></RecBookBox>
-      </div>
-    </div>
-    <div class="second_content">
+    <!-- <div class="second_content">
       <div class="book_box">
         <BookBox></BookBox>
       </div>
-    </div>
+    </div> -->
     <Footer></Footer>
 
   </div>
@@ -135,7 +124,6 @@
     import Carousel from "../../components/Index/Carousel";
     import HeadNav from "../../components/Common/HeadNav";
     import GalleryBook from "../../components/Index/GalleryBook";
-    import SpikeBox from "../../components/Index/SpikeBox";
     import BookBox from "../../components/Index/BookBox";
     import RecBookBox from "../../components/Index/RecBookBox";
     import {reqGetSortList} from "../../api/sort";
@@ -143,7 +131,7 @@
 
     export default {
         name: "index",
-        components: {Nav,Footer,Carousel,HeadNav,GalleryBook,SpikeBox,BookBox,RecBookBox},
+        components: {Nav,Footer,Carousel,HeadNav,GalleryBook,BookBox,RecBookBox},
         data() {
             return {
                 recommend:"recommend",

@@ -11,8 +11,8 @@
         </div>
       </div>
       <div class="user_action">
-        <p> <span>账号安全:</span><span>普通</span></p>
-        <p> <span>绑定手机:</span><span>18370098989</span></p>
+        <p> <span>会员等级:</span><span>VVVip</span></p>
+        <p> <span>绑定手机:</span><span>123456789</span></p>
         <p> <span>绑定邮箱:</span><span>{{user.account}}</span></p>
       </div>
     </div>

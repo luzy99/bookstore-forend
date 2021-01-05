@@ -23,10 +23,8 @@
               <div class="box-bd">
                 <ul class="uc-nav-list">
                   <a href="#/user/userCenter"><li>我的个人中心</li></a>
-                  <a href="#/user/mesNotice"><li>消息通知</li></a>
                   <a href="#/cart" target="_blank"><li>购物车</li></a>
                   <a href="#/user/address"><li>收货地址</li></a>
-                  <a href="#/user/coupon"><li>优惠券</li></a>
                 </ul>
               </div>
             </div>

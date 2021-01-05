@@ -19,58 +19,18 @@
 
     <div class="box_info">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="账号安全" name="first">
-          <div class="tab_box">
-            <div class="secure_box">
-              <div class="secure_logo">
-                <i class="el-icon-lock"></i>
-              </div>
-              <div class="secure_title">
-                <h3>账号密码</h3>
-                <p class="text_msg">用于保护帐号信息和登录安全</p>
-              </div>
-              <div class="secure_action">
-                <el-button plain>修改</el-button>
-              </div>
-            </div>
-            <div class="secure_box">
-              <div class="secure_logo">
-                <i class="el-icon-message"></i>
-              </div>
-              <div class="secure_title">
-                <h3>安全邮箱</h3>
-                <p class="text_msg">安全邮箱将可用于登录小米帐号和重置密码</p>
-              </div>
-              <div class="secure_action">
-                <el-button plain>修改</el-button>
-              </div>
-            </div>
-            <div class="secure_box">
-              <div class="secure_logo">
-                <i class="el-icon-phone-outline"></i>
-              </div>
-              <div class="secure_title">
-                <h3>安全手机</h3>
-                <p class="text_msg">安全手机可以用于登录小米帐号，重置密码或其他安全验证</p>
-              </div>
-              <div class="secure_action">
-                <el-button plain>修改</el-button>
-              </div>
-            </div>
-          </div>
-        </el-tab-pane>
-        <el-tab-pane label="个人信息" name="second">
+        <el-tab-pane label="个人信息" name="first">
           <div class="tab_box">
             <div class="modify_box">
               <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="80px">
-                <el-form-item prop="account" label="昵称">
-                  <el-input type="text" v-model="ruleForm.account" autocomplete="off" placeholder="请输入手机号或者邮箱"></el-input>
+                <el-form-item prop="name" label="昵称">
+                  <el-input type="text" v-model="ruleForm.account" autocomplete="off" placeholder="请输入新昵称"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="出生日期">
-                  <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.account" style="width: 100%;"></el-date-picker>
+                <el-form-item prop="account" label="邮箱">
+                  <el-input type="text" v-model="ruleForm.account" autocomplete="off" placeholder="请输入新邮箱"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="简介">
-                  <el-input type="textarea" v-model="ruleForm.password" autocomplete="off" placeholder="请输入密码"></el-input>
+                <el-form-item prop="account" label="手机">
+                  <el-input type="text" v-model="ruleForm.account" autocomplete="off" placeholder="请输入新手机号"></el-input>
                 </el-form-item>
                 <el-form-item>
                   <el-button type="primary" style="width: 120px;">确认修改</el-button>
@@ -79,43 +39,7 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="绑定授权" name="third">
-          <div class="tab_box">
-            <div class="bind_list">
-              <el-image class="bookImg" :src="imgS1" fit="fill"></el-image>
-              <div class="bind_account">
-                <h3>新浪微博</h3>
-                <p class="text_msg">未绑定</p>
-                <button class="bind_btn">添加绑定</button>
-              </div>
-            </div>
-            <div class="bind_list">
-              <el-image class="bookImg" :src="imgS2" fit="fill"></el-image>
-              <div class="bind_account">
-                <h3>QQ</h3>
-                <p class="text_msg">未绑定</p>
-                <button class="bind_btn">添加绑定</button>
-              </div>
-            </div>
-            <div class="bind_list">
-              <el-image class="bookImg" :src="imgS3" fit="fill"></el-image>
-              <div class="bind_account">
-                <h3>微信</h3>
-                <p class="text_msg">未绑定</p>
-                <button class="bind_btn">添加绑定</button>
-              </div>
-            </div>
-            <div class="bind_list">
-              <el-image class="bookImg" :src="imgS4" fit="fill"></el-image>
-              <div class="bind_account">
-                <h3>Apple</h3>
-                <p class="text_msg">未绑定</p>
-                <button class="bind_btn">添加绑定</button>
-              </div>
-            </div>
 
-          </div>
-        </el-tab-pane>
       </el-tabs>
     </div>
   </div>

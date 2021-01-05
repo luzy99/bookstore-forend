@@ -151,7 +151,7 @@
     import {reqGetBookList,reqDelBook,reqModifyPut,reqModifyRec,reqModifyNew} from "../../../api/book";
     import axios from 'axios';
     export default {
-        name: "Coupon",
+        name: "BookRecommend",
         data(){
             return{
                 loading: true,

@@ -99,7 +99,6 @@
                             orderId:null,//订单编号
                             productTotalMoney:null,//商品总价
                             freight:null,//运费 默认为0元
-                            coupon:null,//优惠券 默认为0元
                             activityDiscount:null,//活动优惠 默认为0元
                             allPrice:null,//订单总金额
                             finallyPrice:null,//最终实付总额

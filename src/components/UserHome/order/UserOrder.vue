@@ -3,7 +3,7 @@
     <h1>我的订单</h1>
     <div class="box_info">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="全部有效订单" name="first">
+        <el-tab-pane label="全部订单" name="first">
           <div class="tab_box" v-show="total<1">
             <p class="noMesInfo" v-show="true">暂无数据</p>
           </div>
@@ -76,40 +76,7 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="订单回收站" name="four">
-          <div class="tab_box" v-show="total<1">
-            <p class="noMesInfo" v-show="true">暂无数据</p>
-          </div>
-          <div class="tab_box" v-show="total>0">
-            <div class="order_list" v-for="order in orderList">
-              <div class="order_summary">
-                <p class="order_status">{{order.orderStatus}}</p>
-                <p class="caption-info">
-                  {{order.orderTime}}
-                  <span>|</span>
-                  {{order.address.name}}
-                  <span>|</span>
-                  订单号：{{order.orderId}}
 
-                  <span style="float: right">实付金额： <span class="money">{{order.expense.finallyPrice}} </span>元</span>
-                </p>
-              </div>
-              <div class="bookInfo">
-                <div class="book_item">
-                  <el-image class="bookImg" v-for="(img,index) in order.coverImgList" :src="img" :key="index" fit="fill"></el-image>
-                </div>
-                <div class="book_action">
-                  <button class="plainBtn" @click="goToOrderDetail(order.id)">订单详情</button>
-                  <br>
-                  <button class="plainBtn">申请售后</button>
-                  <br>
-                  <button class="plainBtn">联系客服</button>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </div>
-        </el-tab-pane>
       </el-tabs>
     </div>
     <div style="margin: 10px 0px 20px;width: 100%" v-show="total>0">
@@ -179,7 +146,6 @@
                             orderId:null,//订单编号
                             productTotalMoney:null,//商品总价
                             freight:null,//运费 默认为0元
-                            coupon:null,//优惠券 默认为0元
                             activityDiscount:null,//活动优惠 默认为0元
                             allPrice:null,//订单总金额
                             finallyPrice:null,//最终实付总额
