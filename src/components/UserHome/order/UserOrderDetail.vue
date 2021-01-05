@@ -113,15 +113,12 @@
         <el-row>
           <el-col :span="4" class="table-cell-title">商品总价</el-col>
           <el-col :span="4" class="table-cell-title">运费</el-col>
-          <el-col :span="4" class="table-cell-title">优惠券</el-col>
-          <el-col :span="4" class="table-cell-title">活动优惠</el-col>
           <el-col :span="4" class="table-cell-title">订单总金额</el-col>
           <el-col :span="4" class="table-cell-title">实付金额</el-col>
         </el-row>
         <el-row>
           <el-col :span="4" class="table-cell">{{order.expense.productTotalMoney}}</el-col>
           <el-col :span="4" class="table-cell">{{order .expense.freight}}</el-col>
-          <el-col :span="4" class="table-cell">{{order.expense.activityDiscount}}</el-col>
           <el-col :span="4" class="table-cell">{{order.expense.allPrice}}</el-col>
           <el-col :span="4" class="table-cell">{{order.expense.finallyPrice}}</el-col>
         </el-row>
@@ -177,7 +174,6 @@
                         orderId:null,//订单编号
                         productTotalMoney:null,//商品总价
                         freight:null,//运费 默认为0元
-                        activityDiscount:null,//活动优惠 默认为0元
                         allPrice:null,//订单总金额
                         finallyPrice:null,//最终实付总额
                     },

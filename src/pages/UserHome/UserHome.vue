@@ -29,19 +29,10 @@
               </div>
             </div>
             <div class="uc-nav-box">
-              <div class="box-hd">售后服务</div>
-              <div class="box-bd">
-                <ul class="uc-nav-list">
-                  <a href="#/user/record"><li>服务记录</li></a>
-                  <a href="#/user/applyService"><li>申请服务</li></a>
-                </ul>
-              </div>
-            </div>
-            <div class="uc-nav-box">
               <div class="box-hd">账户管理</div>
               <div class="box-bd">
                 <ul class="uc-nav-list">
-                  <a href="#/user/userInfo"><li>个人管理</li></a>
+                  <a href="#/user/userInfo"><li>个人信息修改</li></a>
                   <a href="#/user/pwdManage"><li>修改密码</li></a>
                 </ul>
               </div>

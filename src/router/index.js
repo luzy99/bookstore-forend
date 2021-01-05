@@ -52,8 +52,6 @@ import PwdManage from "../components/UserHome/manage/PwdManage";
 import UserInfo from "../components/UserHome/manage/UserInfo";
 import Evaluate from "../components/UserHome/order/Evaluate";
 import UserOrder from "../components/UserHome/order/UserOrder";
-import ApplyService from "../components/UserHome/service/ApplyService";
-import Record from "../components/UserHome/service/Record";
 import BuyPage from "../pages/BuyPage/BuyPage";
 import OrderDetail from "../components/AdminHome/orderNav/OrderDetail";
 import Deliver from "../components/AdminHome/orderNav/Deliver";
@@ -417,16 +415,6 @@ export default new Router({
           path: "userOrderDetail",
           name: "UserOrderDetail",
           component: UserOrderDetail
-        },
-        {
-          path: "applyService",
-          name: "ApplyService",
-          component: ApplyService
-        },
-        {
-          path: "record",
-          name: "Record",
-          component: Record
         }
       ]
     },

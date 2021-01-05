@@ -57,10 +57,6 @@
               <div class="bill_money height_text">{{OrderInitDto.expense.productTotalMoney}}元</div>
             </div>
             <div class="bill_item">
-              <div class="bill_title">活动优惠:</div>
-              <div class="bill_money height_text">-{{OrderInitDto.expense.activityDiscount}}元</div>
-            </div>
-            <div class="bill_item">
               <div class="bill_title">运费:</div>
               <div class="bill_money height_text">{{OrderInitDto.expense.freight}}元</div>
             </div>
@@ -171,7 +167,6 @@
                         label: "",
                     },
                     expense:{
-                        activityDiscount: null,
                         allPrice: null,
                         finallyPrice: null,
                         freight: null,
