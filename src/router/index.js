@@ -16,7 +16,6 @@ import MenuList from "../components/AdminHome/authority/MenuList";
 import RolesList from "../components/AdminHome/authority/RolesList";
 import UserList from "../components/AdminHome/authority/UserList";
 import AdminHome from "../components/AdminHome/AdminHome";
-import BookTopicSet from "../components/AdminHome/bookNav/topic/BookTopicSet";
 import Search from "../pages/Search/Search";
 import Upload from "../components/Upload";
 import Upload2 from "../components/Upload2";
@@ -42,7 +41,6 @@ import Address from "../components/UserHome/home/Address";
 import UserCenter from "../components/UserHome/home/UserCenter";
 import PwdManage from "../components/UserHome/manage/PwdManage";
 import UserInfo from "../components/UserHome/manage/UserInfo";
-import Evaluate from "../components/UserHome/order/Evaluate";
 import UserOrder from "../components/UserHome/order/UserOrder";
 import BuyPage from "../pages/BuyPage/BuyPage";
 import OrderDetail from "../components/AdminHome/orderNav/OrderDetail";
@@ -200,16 +198,6 @@ export default new Router({
           },
         },
         {
-          path: 'bookTopicSet',
-          name: 'BookTopicSet',
-          component: BookTopicSet,
-          meta: {
-            title: '图单专题',
-            url: '/admin/bookTopicSet',
-            requiresAuth: true // 添加该字段，表示进入这个路由是需要登录的
-          },
-        },
-        {
           path: 'menuList',
           name: 'MenuList',
           component: MenuList,
@@ -312,11 +300,6 @@ export default new Router({
           path: "userInfo",
           name: "UserInfo",
           component: UserInfo
-        },
-        {
-          path: "evaluate",
-          name: "Evaluate",
-          component: Evaluate
         },
         {
           path: "userOrder",

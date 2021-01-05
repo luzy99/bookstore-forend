@@ -10,20 +10,12 @@
         <div class="content_main_left">
           <div class="uc-box">
             <div class="uc-nav-box">
-              <div class="box-hd">订单中心</div>
-              <div class="box-bd">
-                <ul class="uc-nav-list">
-                  <a href="#/user/userOrder"><li>我的订单</li></a>
-                  <a href="#/user/evaluate"><li>晒单评价</li></a>
-                </ul>
-              </div>
-            </div>
-            <div class="uc-nav-box">
               <div class="box-hd">个人中心</div>
               <div class="box-bd">
                 <ul class="uc-nav-list">
-                  <a href="#/user/userCenter"><li>我的个人中心</li></a>
+                  <a href="#/user/userCenter"><li>我的主页</li></a>
                   <a href="#/cart" target="_blank"><li>购物车</li></a>
+                  <a href="#/user/userOrder"><li>我的订单</li></a>
                   <a href="#/user/address"><li>收货地址</li></a>
                 </ul>
               </div>

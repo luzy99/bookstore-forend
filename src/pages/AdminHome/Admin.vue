@@ -26,7 +26,6 @@
               <el-menu-item index="/admin/bookList">图书列表</el-menu-item>
               <el-menu-item index="/admin/addBook">添加图书</el-menu-item>
               <el-menu-item index="/admin/FirstSortList">图书分类</el-menu-item>
-              <el-menu-item index="/admin/bookTopicSet">书单专题</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="3">

@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="user_action">
-        <p> <span>会员等级:</span><span>VVVip</span></p>
+        <p> <span>会员等级:</span><span>VVVIP</span></p>
         <p> <span>绑定手机:</span><span>123456789</span></p>
         <p> <span>绑定邮箱:</span><span>{{user.account}}</span></p>
       </div>
@@ -37,28 +37,7 @@
         </div>
       </div>
 
-      <div class="info-list">
-        <el-image style="width: 120px; height: 120px;vertical-align: middle;border-radius: 50%;float: left;margin: 15px 10px"
-                  :src="imgS3"
-                  fit="fill"></el-image>
-        <div class="list_info">
-          <p> <span class="title">待评价的商品数:</span> <span class="num">0</span></p>
-          <p> <span>查看待评价商品></span></p>
-        </div>
-      </div>
-
-      <div class="info-list">
-        <el-image style="width: 120px; height: 120px;vertical-align: middle;border-radius: 50%;float: left;margin: 15px 10px"
-                  :src="imgS4"
-                  fit="fill"></el-image>
-        <div class="list_info">
-          <p> <span class="title">喜欢的商品:</span> <span class="num">0</span></p>
-          <p> <span>喜欢的商品></span></p>
-        </div>
-      </div>
-
     </div>
-    <div id="myChart" v-show="false" :style="{width: '300px', height: '300px'}"></div>
   </div>
 </template>
 
