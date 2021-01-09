@@ -411,7 +411,7 @@
             GetSort(page,pageSize){
                 this.loading=false;
                 reqGetBookList(page,pageSize).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.total = response.total;
                         console.log(this.total);
                         this.tableData = response.bookList;
@@ -439,14 +439,14 @@
                 console.log(row.put);
                 reqModifyPut(row.id,row.put).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         })
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -459,14 +459,14 @@
                 console.log(row.put);
                 reqModifyRec(row.id,row.recommend).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         })
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -478,14 +478,14 @@
                 console.log(row.put);
                 reqModifyNew(row.id,row.newProduct).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         })
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -505,14 +505,14 @@
                 }).then(() => {
                     reqDelBook(row.id).then(response=>{
                         console.log(response);
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "success"
                             })
                         }else{
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "warning"
                             })
                         }

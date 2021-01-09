@@ -174,7 +174,7 @@
             //得到并设置图书分类的联级选择器
             getSortList() {
                 reqGetSortList().then(response => {
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         console.log("list:"+response);
                         let list = response.sortResponseList;
                         this.options = [];

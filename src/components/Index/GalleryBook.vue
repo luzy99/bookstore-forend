@@ -102,12 +102,12 @@
         methods: {
             getBookList(){
                 reqGetRecBookList("newPut").then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.bookList = response.bookList;
                     }else{
                         this.$message({
                             type: 'warning',
-                            message: response.message
+                            message: response.errmsg
                         })
                     }
                 }).catch(err=>{

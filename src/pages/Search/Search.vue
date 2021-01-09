@@ -100,7 +100,7 @@
             //得到图书列表
             getBookList(sortId,page,pageSize){
                 reqGetBookListBySort(sortId,page,pageSize).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.total = response.total;
                         console.log(this.total);
                         this.bookList = response.bookList;

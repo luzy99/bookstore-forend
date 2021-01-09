@@ -176,7 +176,7 @@
                 let id = this.$route.query.id;
                 this.loading=false;
                 reqAdminGetOrderDetail(id).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         console.log(response.orderDto);
                         // this.order = response.orderDto;
                         this.order = [];
@@ -194,14 +194,14 @@
             deliverOrder(){
                 let id = this.$route.query.id;
                 reqDeliverOrder(id,this.finalDelivery,this.logisticsNum).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         })
                     }else {
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }

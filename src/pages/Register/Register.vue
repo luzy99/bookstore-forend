@@ -19,7 +19,7 @@
               <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%">注册</el-button>
             </el-form-item>
             <el-form-item>
-              <center><span>已阅读并同意：浮游书店 用户协议</span></center>
+              <center><span>已阅读并同意：志文书店 用户协议</span></center>
             </el-form-item>
           </el-form>
         </div>
@@ -32,23 +32,12 @@
 <script>
     import Nav from "../../components/Common/Nav";
     import Footer from "../../components/Common/Footer";
-    import {reqRegister,reqAccountVerify} from "../../api/user";
+    import {reqRegister} from "../../api/user";
 
     export default {
         name: "Register",
         components: {Nav,Footer},
         data() {
-            let checkAccount = (rule, value, callback) => {
-                reqAccountVerify(value).then((response)=>{
-                    if(response.data.code=200){
-                        callback();
-                    }else{
-                        callback(response.data.message);
-                    }
-                }).catch(err=>{
-                    callback();
-                })
-            };
             let validatePass = (rule, value, callback) => {
                 if (value === '') {
                     callback(new Error('请输入密码'));
@@ -73,8 +62,8 @@
                 },
                 rules: {
                     account: [
-                        { validator: checkAccount, trigger: 'blur' },
-                        { type: 'email', required: true, message: '请输入正确格式邮箱', trigger: 'change'},
+                        { validator: null, trigger: 'blur' },
+                        { required: true, message: '请输入正确格式邮箱', trigger: 'change'},
                     ],
                     password: [
                         { validator: validatePass, trigger: 'blur' }
@@ -91,11 +80,11 @@
                     if (valid) {
                         //数据校验成功，可以进行提交操作
                         reqRegister(this.ruleForm.account,this.ruleForm.password).then((response)=>{
-                            if(response.code==200){
+                            if(response.errcode=='0'){
                                 console.log("=====注册成功=====");
                                 this.$message({
                                     type: 'success',
-                                    message: response.message,
+                                    message: "注册成功",
                                     duration: 1000
                                 })
                                 setTimeout(() => {
@@ -104,7 +93,7 @@
                             }else{
                                 this.$message({
                                     type: 'waring',
-                                    message: response.message,
+                                    message: response.errmsg,
                                     duration: 1000
                                 })
                             }

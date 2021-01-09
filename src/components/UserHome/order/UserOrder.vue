@@ -214,13 +214,13 @@
             getOrderList(page,pageSize){
                 let account= this.$store.getters.getUser.account;
                 reqUserGetOrderList(account,page,pageSize,this.orderStatus,this.beUserDelete).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.total = response.total;
                         console.log(this.total);
                         this.orderList = response.orderDtoList;
                     }else {
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -240,14 +240,14 @@
                     type: 'warning'
                 }).then(() => {
                     reqModOrderStatus(id,"已收货").then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "success"
                             })
                         }else {
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "warning"
                             })
                         }

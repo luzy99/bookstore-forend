@@ -76,11 +76,11 @@
             initUserCenter(){
                 reqGetUserInfo(this.$store.getters.getUser.account).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.user = response.user;
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }

@@ -276,29 +276,29 @@
                     console.log(this.fileList);
                     // this.$refs.book.submit();
                     reqAddBook(this.book).then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
                                 type: 'success',
-                                message: response.message
+                                message: response.errmsg
                             })
                         }else{
                             this.$message({
                                 type: 'warning',
-                                message: response.message
+                                message: response.errmsg
                             })
                         }
                     })
                 }else {
                     reqModifyBook(this.book).then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
                                 type: 'success',
-                                message: response.message
+                                message: response.errmsg
                             })
                         }else{
                             this.$message({
                                 type: 'warning',
-                                message: response.message
+                                message: response.errmsg
                             })
                         }
                     }).catch(err=>{
@@ -320,15 +320,15 @@
             handleRemove(file, fileList) {
                 if(this.isEdit){
                     reqDelBookImg(this.book.isbn,file.url).then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
                                 type: 'success',
-                                message: response.message
+                                message: response.errmsg
                             })
                         }else{
                             this.$message({
                                 type: 'warning',
-                                message: response.message
+                                message: response.errmsg
                             })
                         }
                     }).catch(err=>{

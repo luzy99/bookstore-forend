@@ -359,13 +359,13 @@
             getOrderList(page,pageSize){
                 this.loading=false;
                 reqAdminGetOrderList(page,pageSize).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.total = response.total;
                         console.log(this.total);
                         this.tableData = response.orderDtoList;
                     }else {
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -414,14 +414,14 @@
                 }).then(() => {
                     reqDelOrder(row.id).then(response=>{
                         console.log(response);
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "success"
                             })
                         }else{
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "warning"
                             })
                         }

@@ -215,7 +215,7 @@
                 if(this.isFirst){
                     this.loading=false;
                     reqGetFirstSortList(page,pageSize).then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.total = response.total;
                             console.log(this.total);
                             this.tableData = response.bookSortList;
@@ -229,7 +229,7 @@
                     console.log("跳转过来的upperName:"+upperName);
                     this.loading=false;
                     reqGetSecondSortList(upperName,page,pageSize).then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.total = response.total;
                             console.log(this.total);
                             this.tableData = response.bookSortList;
@@ -289,14 +289,14 @@
                         console.log("删除一级分类")
                         reqDelFirstSort(row.sortName).then(response=>{
                             console.log(response);
-                            if(response.code==200){
+                            if(response.errcode=='0'){
                                 this.$message({
-                                    message: response.message,
+                                    message: response.errmsg,
                                     type: "success"
                                 })
                             }else{
                                 this.$message({
-                                    message: response.message,
+                                    message: response.errmsg,
                                     type: "warning"
                                 })
                             }
@@ -308,14 +308,14 @@
                         console.log("删除二级分类");
                         reqDelSecondSort(row.upperName,row.sortName).then(response=>{
                             console.log(response);
-                            if(response.code==200){
+                            if(response.errcode=='0'){
                                 this.$message({
-                                    message: response.message,
+                                    message: response.errmsg,
                                     type: "success"
                                 })
                             }else{
                                 this.$message({
-                                    message: response.message,
+                                    message: response.errmsg,
                                     type: "warning"
                                 })
                             }

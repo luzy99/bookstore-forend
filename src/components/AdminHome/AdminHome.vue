@@ -150,7 +150,7 @@
             //得到指定日期内的订单统计数据
             getOrderStatistic(beginDate,endDate){
                 reqGetOrderStatistic(beginDate,endDate).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.option.series[0].data= [];
                         this.option.series[1].data= [];
                         this.option.xAxis.data = [];

@@ -249,7 +249,7 @@
             getAddressList(){
                 reqGetAddressList(this.account).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.OrderInitDto.addressList = response.addressList;
                         if(this.OrderInitDto.addressList.length>0){
                             console.log(this.OrderInitDto.addressList[0]);
@@ -259,7 +259,7 @@
                         // console.log("===response.addressList.length==="+response.addressList.length);
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -272,16 +272,16 @@
             addAddress(){
                 reqAddAddress(this.address).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         });
                         this.dialogVisible = false;
                         this.getAddressList();
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -293,16 +293,16 @@
             //修改地址
             modifyAddress(){
                 reqModAddress(this.address).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         });
                         this.dialogVisible = false;
                         this.getAddressList();
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -325,7 +325,7 @@
             //初始化订单
             initOrder(ids,from,account){
                 reqInitOrder(ids,from,this.account).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         console.log("=========OrderInitDto==========="+response.orderInitDto+"==============")
                         this.OrderInitDto.expense = response.orderInitDto.expense;
                         this.OrderInitDto.bookList = response.orderInitDto.bookList;
@@ -337,7 +337,7 @@
                         console.log(response);
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -354,10 +354,10 @@
                 this.OrderInitDto.account = this.$store.getters.getUser.account;
                 console.log("====this.OrderInitDto.account===="+this.OrderInitDto.account+"=====")
                 reqAddOrder(this.OrderInitDto).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
                             type: 'success',
-                            message: response.message,
+                            message: response.errmsg,
                             duration: 1000
                         })
                         setTimeout(() => {
@@ -365,7 +365,7 @@
                         }, 1000);
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }

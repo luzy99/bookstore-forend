@@ -135,12 +135,12 @@
                 console.log("===获取的地址列表：==="+this.$store.getters.getUser.account+"=====");
                 reqGetAddressList(this.$store.getters.getUser.account).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.addressList = response.addressList;
                         console.log("===response.addressList.length==="+response.addressList.length);
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -153,16 +153,16 @@
             addAddress(){
                 reqAddAddress(this.address).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         });
                         this.dialogVisible = false;
                         this.getAddressList();
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -175,16 +175,16 @@
             modifyAddress(){
                 reqModAddress(this.address).then(response=>{
                     console.log(response);
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         });
                         this.dialogVisible = false;
                         this.getAddressList();
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -201,15 +201,15 @@
                 }).then(() => {
                     reqDelAddress(id).then(response=>{
                         console.log(response);
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "success"
                             });
                             this.getAddressList();
                         }else{
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "warning"
                             })
                         }

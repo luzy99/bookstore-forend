@@ -70,14 +70,14 @@
             getSortBookList(){
                 console.log("发送了获取分类图书的请求");
                 reqGetSortBookList(117).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         console.log(response);
                         this.bookList = response.sortBookResList;
                         console.log(this.bookList);
                     }else{
                         this.$message({
                             type: 'warning',
-                            message: response.message
+                            message: response.errmsg
                         })
                     }
                 }).catch(err=>{

@@ -139,14 +139,14 @@
                 }
                 console.log(this.bookSort.level);
                 reqAddBookSort(this.bookSort).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         })
                     }else {
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: 'warning'
                         })
                     }
@@ -158,14 +158,14 @@
 
             modifySort(){
                 reqModifyBookSort(this.bookSort).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success"
                         })
                     }else {
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: 'warning'
                         })
                     }

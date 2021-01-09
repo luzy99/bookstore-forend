@@ -1,41 +1,8 @@
-import axios from 'axios'
-
-// 包装的axios ajax请求接口
-function ajax1 (url, data={}, method='GET') {
-  return new Promise(function (resolve, reject) {
-    let promise
-
-    if (method === 'GET') {
-      // 准备url query参数数据
-      let dataStr = ''
-      Object.keys(data).forEach(key => {
-        dataStr += key + '=' + data[key] + '&'
-      })
-      if (dataStr !== '') {
-        dataStr = dataStr.substring(0, dataStr.lastIndexOf('&'))
-        url = url + '?' + dataStr
-      }
-
-      promise = axios.get(url)
-    } else {
-      promise = axios.post(url, data)
-    }
-
-    promise.then(function (response) {
-      resolve(response)
-    }).catch(function (error) {
-      reject(error)
-    })
-  })
-}
 import ajax from "./ajax";
-const BASE_URL = 'http://localhost:8082'
+const BASE_URL = 'http://localhost:8082/api'
 
 //登录
-export const reqLogin = ({account, password}) => ajax1('http://localhost:8082/login', {account, password}, 'POST')
-
-// 检测该邮箱账号是否已经被注册
-export const reqAccountVerify = ({account})=>ajax(BASE_URL+'/user/accountVerify',{account})
+export const reqLogin = ({account, password}) => ajax(BASE_URL+'/user/login', {account, password})
 
 // 注册账号
 export const reqRegister = (account,password)=>ajax(BASE_URL+'/user/register',{account,password})

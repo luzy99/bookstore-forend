@@ -202,7 +202,7 @@
                 let id = this.$route.query.id;
                 this.loading=false;
                 reqAdminGetOrderDetail(id).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         console.log(response.orderDto);
                         this.order = response.orderDto;
                     }else {

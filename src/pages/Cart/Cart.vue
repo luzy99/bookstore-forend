@@ -178,11 +178,11 @@
             //处理购物车数量变化 也就是修改购物车图书数量
             modifyCart(index, row) {
                 reqModCart(this.account,row.id,row.num).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         //修改成功，这里不给提示，体验感更好
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }
@@ -203,15 +203,15 @@
                     type: 'warning'
                 }).then(() => {
                     reqDelCart(this.account,row.id).then(response=>{
-                        if(response.code==200){
+                        if(response.errcode=='0'){
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "success"
                             })
                             this.getCartList();
                         }else{
                             this.$message({
-                                message: response.message,
+                                message: response.errmsg,
                                 type: "warning"
                             })
                         }
@@ -229,11 +229,11 @@
             getCartList(){
                 console.log("====this.account===="+this.account+"========")
                 reqGetCartList(this.account,1,10).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.cartList = response.cartBookDtoList;
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning"
                         })
                     }

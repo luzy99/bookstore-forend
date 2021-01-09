@@ -73,28 +73,14 @@
                 let _this = this;
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        console.log("=====开始登陆=======")
                         reqLogin({
                             account: this.ruleForm.account,
                             password: this.ruleForm.password
                         }).then((response) => {
-                            console.log("登陆后的response："+response.data);
-                            let user  = response.data.user;
-                            console.log("=====user:==="+user+"=========");
-                            const jwt = response.headers['authorization']
-                            console.log("====jwt:=== "+jwt);
-                            if(response.data.code == 200){
-                                console.log("登录成功");
-                                console.log(response);
-                                const jwt = response.headers['authorization']
-                                console.log("====jwt:=== "+jwt);
-                                // //把数据共享出去
-                                _this.$store.commit("SET_TOKEN", jwt)
-                                console.log("===localStorage.getItem(\"token\")==="+localStorage.getItem("token")+"==");
-                                _this.$store.commit("SET_USERINFO", response.data.user);
-                                console.log("=====response.data.user====="+response.data.user.manage+"========")
-
-                                if(response.data.user.manage){
+                            let user  = response.data;
+                            if(response.errcode == '0'){
+                                _this.$store.commit("SET_USERINFO", user);
+                                if(user.admin){
                                     this.$message({
                                         type: 'success',
                                         message: "登录成功！",
@@ -113,8 +99,6 @@
                                         this.$router.push({path:'/user/userCenter'});
                                     }, 1000);
                                 }
-                                // console.log("返回来的SET_USERINFO:"+response.data.userInfo)
-                                // this.$router.push({path:'/devHome/appList'});
                             }else {
                                 this.$message({
                                     type: 'waring',
@@ -122,7 +106,7 @@
                                 })
                             }
                         }).catch(() => {
-                            // this.$message.error("登录失败")
+                            this.$message.error("登录失败")
                         })
                     } else {
                         //数据校验失败，不可以进行提交

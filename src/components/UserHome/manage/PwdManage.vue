@@ -71,11 +71,11 @@
                         console.log("=====this.ruleForm.oldPassword:========"+this.ruleForm.newPassword+"====")
                         //数据校验成功，可以进行提交操作
                         reqModUserPwd(this.$store.getters.getUser.account,this.ruleForm.oldPassword,this.ruleForm.newPassword).then((response)=>{
-                            if(response.code==200){
+                            if(response.errcode=='0'){
                                 console.log("=====注册成功=====");
                                 this.$message({
                                     type: 'success',
-                                    message: response.message,
+                                    message: response.errmsg,
                                     duration: 1000
                                 })
                                 setTimeout(() => {
@@ -84,7 +84,7 @@
                             }else{
                                 this.$message({
                                     type: 'waring',
-                                    message: response.message,
+                                    message: response.errmsg,
                                     duration: 1000
                                 })
                             }

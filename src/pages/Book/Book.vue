@@ -120,7 +120,7 @@
 
             getSortList() {
                 reqGetSortList().then(response => {
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.sortList = response.sortResponseList;
                     }
                     // console.log(this.sortList);
@@ -160,15 +160,15 @@
             addBookToCart(){
                 // console.log("=======this.book.id:===="+this.book.id+"=================")
                 reqAddCart(this.$store.getters.getUser.account,this.book.id,1).then(response=>{
-                    if(response.code==200){
+                    if(response.errcode=='0'){
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "success",
                             duration: 1000
                         });
                     }else{
                         this.$message({
-                            message: response.message,
+                            message: response.errmsg,
                             type: "warning",
                             duration: 1000
                         })
