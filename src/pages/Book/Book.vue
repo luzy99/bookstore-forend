@@ -13,7 +13,7 @@
           <div class="book_list_content">作者: 	{{book.author}}</div>
           <div class="book_list_content">ISBN: 	{{book.isbn}}</div>
           <div class="book_list_content">出版社: 	{{book.publish}}</div>
-          <div class="book_list_content">出版时间: 	{{book.birthday}}</div>
+          <div class="book_list_content">出版时间: 	{{book.releaseTime}}</div>
         </div>
         <div class="book_content book_buy_price">
           <div class="book_buy_info">
@@ -22,7 +22,7 @@
           </div>
           <div class="book_buy_info">
             <span class="labelSpan">市场价</span>
-            <s>￥{{book.marketPrice}}</s>
+            <s>￥{{book.price}}</s>
           </div>
         </div>
         <div class="book_content">
@@ -35,7 +35,7 @@
         </div>
         <div class="book_content">
           <span class="labelSpan">库存</span>
-          {{book.stock}}件
+          {{book.remainNum}}件
         </div>
         <div class="book_content">
           <el-button class="plainBtn" plain @click="goBuyPage(book.id)">立即购买</el-button>
@@ -86,11 +86,10 @@
                     bookName: '',
                     author: '',
                     isbn: '',
-                    publish: '',
-                    birthday: '',
-                    marketPrice: '',
+                    publisher: '',
+                    releaseTime: '',
                     price: '',
-                    stock: '',
+                    remainNum: '',
                     description: '',
                     imgSrc: [],
                     put: true,

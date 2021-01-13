@@ -39,19 +39,19 @@
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item label="出版时间" prop="birthday">
+          <el-form-item label="出版时间" prop="releaseTime">
             <el-col :span="12">
-              <el-date-picker type="date" placeholder="选择日期" v-model="book.birthday" style="width: 100%;"></el-date-picker>
+              <el-date-picker type="date" placeholder="选择日期" v-model="book.releaseTime" style="width: 100%;"></el-date-picker>
             </el-col>
           </el-form-item>
-          <el-form-item label="原价" prop="marketPrice">
-            <el-input v-model.number="book.marketPrice"></el-input>
+          <el-form-item label="原价" prop="price">
+            <el-input v-model.number="book.price"></el-input>
           </el-form-item>
           <el-form-item label="售价" prop="price">
             <el-input v-model.number="book.price"></el-input>
           </el-form-item>
-          <el-form-item label="库存" prop="stock">
-            <el-input v-model.number="book.stock" @keyup.native="proving"></el-input>
+          <el-form-item label="库存" prop="remainNum">
+            <el-input v-model.number="book.remainNum" @keyup.native="proving"></el-input>
           </el-form-item>
           <el-form-item label="权重值" prop="rank">
             <el-input v-model.number="book.rank" @keyup.native="proving"></el-input>
@@ -172,11 +172,10 @@
                     bookName: '',
                     author: '',
                     isbn: '',
-                    publish: '',
-                    birthday: '',
-                    marketPrice: '',
+                    publisher: '',
+                    releaseTime: '',
                     price: '',
-                    stock: '',
+                    remainNum: '',
                     description: '',
                     imgSrc: [],
                     put: true,
@@ -202,19 +201,19 @@
                         { required: true, message: 'ISBN不能为空', trigger: 'blur' },
                         { min: 1, max: 13, message: 'ISBN长度在 10 到 13 个字符', trigger: 'blur' }
                     ],
-                    publish: [
+                    publisher: [
                         { required: true, message: '请选择活动区域', trigger: 'change' }
                     ],
-                    birthday: [
+                    releaseTime: [
                         {  required: true, message: '请选择日期', trigger: 'change' },
                     ],
-                    marketPrice:[
+                    price:[
                         { validator: checkPrice, trigger: 'blur' }
                     ],
                     price:[
                         { validator: checkPrice, trigger: 'blur' }
                     ],
-                    stock:[
+                    remainNum:[
                         { validator: checkRank, trigger: 'blur' }
                     ],
                     rank:[

@@ -41,7 +41,7 @@
           label="原价/售价"
           width="160" align="center">
           <template slot-scope="scope">
-            原价：{{ scope.row.marketPrice }}元<br>
+            原价：{{ scope.row.price }}元<br>
             售价：{{ scope.row.price }}元
           </template>
         </el-table-column>
@@ -108,7 +108,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000
@@ -116,7 +116,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000
@@ -124,7 +124,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000
@@ -132,7 +132,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000
@@ -140,7 +140,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000
@@ -148,7 +148,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000
@@ -156,7 +156,7 @@
                     coverImg: "static/image/bookdefault.jpg",
                     bookName: '平凡的世界',
                     author: '路遥',
-                    marketPrice:200,
+                    price:200,
                     price: 180,
                     num:10,
                     sales: 1000

@@ -119,7 +119,7 @@
           label="原价/售价"
           width="120" align="center">
           <template slot-scope="scope">
-            原价：{{ scope.row.marketPrice }}元<br>
+            原价：{{ scope.row.price }}元<br>
             售价：{{ scope.row.price }}元
           </template>
         </el-table-column>
@@ -221,11 +221,10 @@
                     bookName: '',
                     author: '',
                     isbn: '',
-                    publish: '',
-                    birthday: '',
-                    marketPrice: '',
+                    publisher: '',
+                    releaseTime: '',
                     price: '',
-                    stock: '',
+                    remainNum: '',
                     description: '',
                     ImgSrc: [],
                     put: true,
@@ -239,7 +238,7 @@
                     bookName: '',
                     author: '',
                     isbn: '',
-                    publish: '',
+                    publisher: '',
                     put: '',
                     bookSort: '',
                 },
