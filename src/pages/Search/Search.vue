@@ -3,20 +3,12 @@
     <Nav></Nav>
     <HeadNav></HeadNav>
     <div class="box_title">
-      <p>{{this.total}} 条结果 | <span style="color: #9d232c">{{this.sortName}}</span></p>
+      <p>{{this.total}} 条结果 | <span style="color: #9d232c">{{this.kw}}</span></p>
     </div>
     <div class="box">
-      <div class="book_sort">
-        <div class="tab">
-          <div class="tab_head">分类</div>
-          <div v-for="sort in sortList" class="tab_list" :key="sort.upperSort.id">
-            <router-link :to="{path: '/search',query:{id:sort.upperSort.id,name:sort.upperSort.sortName}}"><div style="color: black;width: 100%">{{sort.upperSort.sortName}}</div></router-link>
-          </div>
-        </div>
-      </div>
       <div class="book_info">
         <div class="book_content" v-for="book in bookList">
-          <router-link :to="{path: '/book',query:{id:book.id}}">
+          <router-link :to="{path: '/book',query:{id:book.isbn}}">
           <div class="book_content_img">
             <el-image
               style="width: 82%; height: 150px;margin:5px 9%"
@@ -28,9 +20,8 @@
             <div class="book_name">{{book.bookName}}</div>
             <div class="book_list_content">作者: 	{{book.author}}</div>
             <div class="book_list_content">ISBN: 	{{book.isbn}}</div>
-            <div class="book_list_content">出版社: 	{{book.publish}}</div>
-            <div class="book_list_content">出版时间: 	{{book.birthday}}</div>
-            <div class="book_list_content">原价: 	{{book.marketPrice}}</div>
+            <div class="book_list_content">出版社: 	{{book.publisher}}</div>
+            <div class="book_list_content">出版时间: 	{{book.releaseTime}}</div>
             <div class="book_list_content">售价: 	{{book.price}}</div>
             <div>
               <el-button type="primary" icon="el-icon-shopping-cart-2" class="cartBtn">加入购物车</el-button>
@@ -75,17 +66,9 @@
                 currentPage: 1,
                 page_size: 10,
                 total:100,
-                sortName:"分类名称",
-                sortList:[
-                    {
-                        upperSort: {
-                            sortName: null,
-                        },
-                        children:null
-                    }
-                ],
+                kw:"关键词",
+                type:0,
                 bookList: [],
-                sortId:null,
             }
         },
         methods: {
@@ -125,22 +108,12 @@
             },
         },
         created() {
-            this.sortId = this.$route.query.id;
-            this.sortName = this.$route.query.name;
-            console.log("this.$route.query.name:"+this.$route.query.name);
-            console.log("this.$route.query.id:"+this.$route.query.id);
-            this.getSortList();
+            this.type = this.$route.query.type;
+            this.kw = this.$route.query.kw;
+
+            console.log(this.kw);
+
             this.getBookList(this.sortId,1,10);
-        },
-        watch: {
-            $route(to, from) {
-                this.sortId = this.$route.query.id;
-                this.sortName = this.$route.query.name;
-                console.log("this.$route.query.name:"+this.$route.query.name);
-                console.log("this.$route.query.id:"+this.$route.query.id);
-                this.getSortList();
-                this.getBookList(this.sortId,1,10);
-            }
         },
     }
 </script>

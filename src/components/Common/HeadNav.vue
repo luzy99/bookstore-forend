@@ -5,10 +5,6 @@
         <div style="width: 232px; height: 40px;vertical-align: middle;font-family: 宋体;font-size: 38px;font-style: italic">
           志文书店
         </div>
-<!--        <el-image-->
-<!--          style="width: 232px; height: 40px;vertical-align: middle;"-->
-<!--          :src="imgS"-->
-<!--          fit="fill"></el-image>-->
       </div>
       <div style="float: right">
         <el-input placeholder="书名、作者、出版社、ISBN" v-model="input" class="input-with-select" style="width: 500px;height: 40px;">
@@ -17,7 +13,7 @@
             <el-option label="作者" value="2"></el-option>
             <el-option label="出版社" value="3"></el-option>
           </el-select>
-          <el-button slot="append" icon="el-icon-search"></el-button>
+          <el-button slot="append" icon="el-icon-search" @click="onSubmit"></el-button>
         </el-input>
       </div>
     </div>
@@ -30,20 +26,19 @@
         data() {
             return {
                 input: "",
-                select: '',
-                //第一种设置图片的方法
-                // imgS: "static/image/logo-250.png"
-                //第二种设置图片的方法
-                imgS: require('../../assets/image/logo-250.png')
+                select: "1"
             }
         },
-        computed: {
-            //第三种方法
-            getImgS(){
-                let imgUrl = "logo-250.png";
-                let imgSrc = require('../../assets/image/'+imgUrl);
-                return imgSrc;
-            }
+        methods:{
+          onSubmit(){
+            this.$router.push({
+                    path: "/search",
+                    query: {
+                        type: Number(this.select),
+                        kw: this.input
+                    }
+                })
+          }
         }
     }
 </script>
