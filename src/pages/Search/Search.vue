@@ -8,11 +8,11 @@
     <div class="box">
       <div class="book_info">
         <div class="book_content" v-for="book in bookList">
-          <router-link :to="{path: '/book',query:{id:book.isbn}}">
+          <router-link :to="{path: '/book',query:{isbn:book.isbn}}">
           <div class="book_content_img">
             <el-image
               style="width: 82%; height: 150px;margin:5px 9%"
-              :src="book.coverImg"
+              :src="book.picture"
               fit="fill"></el-image>
           </div>
           </router-link>
@@ -55,8 +55,7 @@
     import HeadNav from "../../components/Common/HeadNav";
     import Footer from "../../components/Common/Footer";
     import CarouselBtn from "../../components/Index/CarouselBtn";
-    import {reqGetSortList} from "../../api/sort";
-    import {reqGetRecBookList,reqGetBookListBySort} from "../../api/book";
+    import {reqGetBookList} from "../../api/book";
 
     export default {
         name: "Search",
@@ -76,17 +75,15 @@
                 console.log(tab, event);
             },
             getSortList() {
-                reqGetSortList().then(response => {
-                    this.sortList = response.sortResponseList;
-                });
+
             },
             //得到图书列表
-            getBookList(sortId,page,pageSize){
-                reqGetBookListBySort(sortId,page,pageSize).then(response=>{
+            getBookList(type,kw){
+                reqGetBookList(type,kw).then(response=>{
                     if(response.errcode=='0'){
-                        this.total = response.total;
+                        this.total = response.data.length;
                         console.log(this.total);
-                        this.bookList = response.bookList;
+                        this.bookList = response.data;
                     }
                     console.log(response);
                 }).catch(err=>{
@@ -98,13 +95,13 @@
             handleSizeChange(val) {
                 console.log(`每页 ${val} 条`);
                 this.page_size = val;
-                this.getBookList(this.sortId,1,this.page_size);
+                this.getBookList(this.type,this.kw);
             },
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);
                 this.currentPage = val;
                 console.log(this.currentPage+":"+this.page_size);
-                this.getBookList(this.sortId,this.currentPage,this.page_size);
+                this.getBookList(this.type,this.currentPage,this.page_size);
             },
         },
         created() {
@@ -113,7 +110,7 @@
 
             console.log(this.kw);
 
-            this.getBookList(this.sortId,1,10);
+            this.getBookList(this.type,this.kw);
         },
     }
 </script>

@@ -1,6 +1,6 @@
 import ajax from "./ajax";
 
-const BASE_URL = 'http://localhost:8082/book'
+const BASE_URL = 'http://localhost:8082/api/book'
 
 //添加出版社newProduct: true,
 //                 recommend
@@ -38,16 +38,9 @@ export const reqModifyBook = (book) => ajax(BASE_URL+'/modifyBook', {
 }, 'POST')
 
 
-export const reqGetBookList = (page,pageSize)=>ajax(BASE_URL+'/getBookList',{page, pageSize})
-export const reqGetBook = (id)=>ajax(BASE_URL+'/getBook',{id})
+export const reqGetBookList = (type,kw)=>ajax(BASE_URL+'/getBookList',{type, kw})
+export const reqGetBook = (ISBN)=>ajax(BASE_URL+'/getBookDetail',{ISBN})
 
-export const reqGetRecBookList = (sort)=>ajax(BASE_URL+'/getRecBookList',{sort})
-
-
-
-//删除
-export const reqDelBook = (bookId)=>ajax(BASE_URL+'/delBook',{bookId})
-export const reqDelBookImg = (bookId,url)=>ajax(BASE_URL+'/delOneImg',{bookId,url})
 
 
 export const reqGetBookImgPathList = (isbn)=>ajax(BASE_URL+'/getImgPaths',{isbn})

@@ -203,8 +203,7 @@
 </template>
 
 <script>
-    import {reqGetSortList} from "../../../../api/sort";
-    import {reqGetBookList,reqDelBook,reqModifyPut,reqModifyRec,reqModifyNew} from "../../../../api/book";
+    import {reqGetBookList,reqModifyPut,reqModifyRec,reqModifyNew} from "../../../../api/book";
     import axios from 'axios';
     import qs from 'qs';
     export default {
@@ -315,7 +314,6 @@
         },
         created:function () {
             this.getPublishName();
-            this.getSortList();
             this.GetSort(1,5);
             console.log("init起作用了！")
         },
@@ -493,55 +491,6 @@
                 })
             },
 
-
-
-            //处理删除函数
-            handleDelete(index, row){
-                this.$confirm('是否要进行删除操作?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                }).then(() => {
-                    reqDelBook(row.id).then(response=>{
-                        console.log(response);
-                        if(response.errcode=='0'){
-                            this.$message({
-                                message: response.errmsg,
-                                type: "success"
-                            })
-                        }else{
-                            this.$message({
-                                message: response.errmsg,
-                                type: "warning"
-                            })
-                        }
-                        this.GetSort(this.currentPage,this.page_size);
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-                }).catch(()=>{
-                    console.log("取消删除了");
-                });
-            },
-
-
-            //得到并设置图书分类的联级选择器
-            getSortList() {
-                reqGetSortList().then(response => {
-                    let list = response.sortResponseList;
-                    this.options = [];
-                    for (let i = 0; i < list.length; i++) {
-                        let children = [];
-                        if (list[i].children != null && list[i].children.length > 0) {
-                            for (let j = 0; j < list[i].children.length; j++) {
-                                children.push({label: list[i].children[j].sortName, value: list[i].children[j].id});
-                            }
-                        }
-                        console.log(list[i]);
-                        this.options.push({label: list[i].upperSort.sortName, value: list[i].upperSort.id, children: children});
-                    }
-                });
-            },
             //得到并设置出版的下拉选择器
             getPublishName(){
                 reqGetPublishNames().then(response=>{

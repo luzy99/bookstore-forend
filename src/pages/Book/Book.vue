@@ -8,21 +8,21 @@
         <CarouselBtn :imgList="book.imgSrc"></CarouselBtn>
       </div>
       <div class="book_buy">
-        <div class="book_name">{{book.bookName}}</div>
+        <div class="book_name">{{book.BookName}}</div>
         <div class="book_content book_buy_content">
-          <div class="book_list_content">作者: 	{{book.author}}</div>
-          <div class="book_list_content">ISBN: 	{{book.isbn}}</div>
-          <div class="book_list_content">出版社: 	{{book.publish}}</div>
-          <div class="book_list_content">出版时间: 	{{book.releaseTime}}</div>
+          <div class="book_list_content">作者: 	{{book.Author}}</div>
+          <div class="book_list_content">ISBN: 	{{book.ISBN}}</div>
+          <div class="book_list_content">出版社: 	{{book.Publisher}}</div>
+          <div class="book_list_content">出版时间: 	{{book.ReleaseTime}}</div>
         </div>
         <div class="book_content book_buy_price">
           <div class="book_buy_info">
             <span class="labelSpan">售价</span>
-            <span class="labelPrice">￥{{book.price}}</span>
+            <span class="labelPrice">￥{{book.Price}}</span>
           </div>
           <div class="book_buy_info">
             <span class="labelSpan">市场价</span>
-            <s>￥{{book.price}}</s>
+            <s>￥{{book.Price}}</s>
           </div>
         </div>
         <div class="book_content">
@@ -35,7 +35,7 @@
         </div>
         <div class="book_content">
           <span class="labelSpan">库存</span>
-          {{book.remainNum}}件
+          {{book.RemainNum}}件
         </div>
         <div class="book_content">
           <el-button class="plainBtn" plain @click="goBuyPage(book.id)">立即购买</el-button>
@@ -56,7 +56,7 @@
         <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
           <el-tab-pane label="商品详情" name="first">
             <div class="product">
-              <div class="markdown-body" v-html="book.description"></div>
+              <div class="markdown-body" v-html="book.Introduction"></div>
             </div>
           </el-tab-pane>
         </el-tabs>
@@ -72,7 +72,6 @@
     import Footer from "../../components/Common/Footer";
     import CarouselBtn from "../../components/Index/CarouselBtn";
     import {reqGetBook} from "../../api/book";
-    import {reqGetSortList} from "../../api/sort";
     import {reqAddCart} from "../../api/cart";
     import 'github-markdown-css'
     export default {
@@ -83,17 +82,17 @@
                 result: "",
                 book: {
                     id: null,
-                    bookName: '',
-                    author: '',
-                    isbn: '',
-                    publisher: '',
-                    releaseTime: '',
-                    price: '',
-                    remainNum: '',
-                    description: '',
+                    BookName: '',
+                    Author: '',
+                    ISBN: '',
+                    Publisher: '',
+                    ReleaseTime: '',
+                    Price: '',
+                    RemainNum: '',
+                    Introduction: '',
                     imgSrc: [],
                     put: true,
-                    coverImg: '',
+                    Picture: '',
                     rank: '',
                     newProduct: true,
                     recommend: true,
@@ -118,13 +117,7 @@
             },
 
             getSortList() {
-                reqGetSortList().then(response => {
-                    if(response.errcode=='0'){
-                        this.sortList = response.sortResponseList;
-                    }
-                    // console.log(this.sortList);
-                    // console.log("response.sortResponseList"+response.sortResponseList);
-                });
+
             },
 
             getBook(bookId){
@@ -134,8 +127,8 @@
                     // console.log("this.book.imgSrc:"+response.book.imgSrc);
                     let MarkdownIt = require("markdown-it");
                     let md = new MarkdownIt();
-                    let result = md.render(this.book.description);
-                    this.book.description = result;
+                    let result = md.render(this.book.Introduction);
+                    this.book.Introduction = result;
                 }).catch(err=>{
                     console.log(err);
                 })
@@ -178,7 +171,7 @@
             }
         },
         created() {
-            this.bookId = this.$route.query.id;
+            this.bookId = this.$route.query.isbn;
             // console.log("this.bookId"+this.bookId);
             this.getBook(this.bookId);
             this.getSortList();

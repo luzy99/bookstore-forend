@@ -30,7 +30,7 @@
 </template>
 
 <script>
-    import {reqGetRecBookList} from "../../api/book";
+    import {reqGetBookList} from "../../api/book";
     export default {
         props:{
             listSort: {
@@ -54,9 +54,9 @@
                 switch (this.listSort) {
                     case "recommend":
                         this.sortTitle = "精品推荐";
-                        reqGetRecBookList("recommend").then(response=>{
+                        reqGetBookList(11).then(response=>{
                             if(response.errcode=='0'){
-                                this.bookList = response.bookList;
+                                this.bookList = response.data;
                             }else{
                                 this.$message({
                                     type: 'warning',
@@ -72,9 +72,9 @@
                         break;
                     case "newProduct":
                         this.sortTitle = "新品推荐";
-                        reqGetRecBookList("newProduct").then(response=>{
+                        reqGetBookList(10).then(response=>{
                             if(response.errcode=='0'){
-                                this.bookList = response.bookList;
+                                this.bookList = response.data;
                             }else{
                                 this.$message({
                                     type: 'warning',

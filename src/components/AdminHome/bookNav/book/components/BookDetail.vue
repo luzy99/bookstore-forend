@@ -116,8 +116,7 @@
 </template>
 
 <script>
-    import {reqGetSortList} from "../../../../../api/sort";
-    import {reqAddBook,reqGetBookImgPathList,reqGetBook,reqDelBookImg,reqModifyBook} from "../../../../../api/book";
+    import {reqAddBook,reqGetBookImgPathList,reqGetBook,reqModifyBook} from "../../../../../api/book";
     export default {
         name: "BookDetail",
         props:{
@@ -314,32 +313,6 @@
                 console.log("图书的分类是:"+bookSort[0]+bookSort[1]);
             },
 
-
-            //图片被移除后
-            handleRemove(file, fileList) {
-                if(this.isEdit){
-                    reqDelBookImg(this.book.isbn,file.url).then(response=>{
-                        if(response.errcode=='0'){
-                            this.$message({
-                                type: 'success',
-                                message: response.errmsg
-                            })
-                        }else{
-                            this.$message({
-                                type: 'warning',
-                                message: response.errmsg
-                            })
-                        }
-                    }).catch(err=>{
-                        this.$message({
-                            type: 'success',
-                            message: "删除图片失败"
-                        })
-                    })
-                }
-                console.log("url:"+file.url);
-                console.log("fileList:"+fileList);
-            },
             handlePictureCardPreview(file) {
                 this.dialogImageUrl = file.url;
                 this.dialogVisible = true;
@@ -349,23 +322,6 @@
             },
 
 
-            //得到并设置图书分类的联级选择器
-            getSortList() {
-                reqGetSortList().then(response => {
-                    let list = response.sortResponseList;
-                    this.options = [];
-                    for (let i = 0; i < list.length; i++) {
-                        let children = [];
-                        if (list[i].children != null && list[i].children.length > 0) {
-                            for (let j = 0; j < list[i].children.length; j++) {
-                                children.push({label: list[i].children[j].sortName, value: list[i].children[j].id});
-                            }
-                        }
-                        console.log(list[i]);
-                        this.options.push({label: list[i].upperSort.sortName, value: list[i].upperSort.id, children: children});
-                    }
-                });
-            },
             //得到并设置出版的下拉选择器
             getPublishName(){
                 reqGetPublishNames().then(response=>{

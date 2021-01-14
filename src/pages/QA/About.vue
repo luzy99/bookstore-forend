@@ -6,7 +6,7 @@
     <div class="section">
       <div class="help">
          <div class="help-title">
-            <h1>F&amp;Q</h1>
+            <h1>关于我们</h1>
          </div>
          <p>1. 开发人员：</p> 
          <p>71118315 陆舟洋，71118316 钱会川， 71118317 徐志文</p> 
@@ -30,7 +30,6 @@
     import Footer from "../../components/Common/Footer";
     import CarouselBtn from "../../components/Index/CarouselBtn";
     import {reqGetBook} from "../../api/book";
-    import {reqGetSortList} from "../../api/sort";
     import {reqAddCart} from "../../api/cart";
     import 'github-markdown-css'
     export default {

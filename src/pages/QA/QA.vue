@@ -27,7 +27,6 @@
     import Footer from "../../components/Common/Footer";
     import CarouselBtn from "../../components/Index/CarouselBtn";
     import {reqGetBook} from "../../api/book";
-    import {reqGetSortList} from "../../api/sort";
     import {reqAddCart} from "../../api/cart";
     import 'github-markdown-css'
     export default {

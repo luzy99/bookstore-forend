@@ -102,17 +102,17 @@
                   <GalleryBook></GalleryBook>
                 </div>
             </el-tab-pane>
-            <el-tab-pane label="新书区" name="second">新书区</el-tab-pane>
-            <el-tab-pane label="书单区" name="third">书单区</el-tab-pane>
+            <el-tab-pane label="推荐区" name="second">
+              <RecBookBox></RecBookBox>
+            </el-tab-pane>
+            <el-tab-pane label="新书区" name="third">
+              <RecBookBox listSort="newProduct"></RecBookBox>
+            </el-tab-pane>
           </el-tabs>
         </div>
       </div>
     </div>
-    <!-- <div class="second_content">
-      <div class="book_box">
-        <BookBox></BookBox>
-      </div>
-    </div> -->
+
     <Footer></Footer>
 
   </div>
@@ -126,7 +126,6 @@
     import GalleryBook from "../../components/Index/GalleryBook";
     import BookBox from "../../components/Index/BookBox";
     import RecBookBox from "../../components/Index/RecBookBox";
-    import {reqGetSortList} from "../../api/sort";
 
     export default {
         name: "index",
@@ -171,66 +170,6 @@
                 return upperName+"/"+childName;
             },
 
-            //得到并设置图书分类的联级选择器
-            getSortList() {
-                reqGetSortList().then(response => {
-                    if(response.errcode=='0'){
-                        console.log("list:"+response);
-                        let list = response.sortResponseList;
-                        this.options = [];
-                        if(list.length%2==0){
-                            for (let i = 0; i < list.length; i=i+2) {
-                                let children = [];
-                                if (list[i].children != null && list[i].children.length > 0) {
-                                    for (let j = 0; j < list[i].children.length; j++) {
-                                        children.push({label: list[i].children[j].sortName, value: list[i].children[j].id});
-                                    }
-                                }
-                                // console.log(list[i]);
-
-                                let children1 = [];
-                                if (list[i+1].children != null && list[i+1].children.length > 0) {
-                                    for (let j = 0; j < list[i+1].children.length; j++) {
-                                        children1.push({label: list[i+1].children[j].sortName, value: list[i+1].children[j].id});
-                                    }
-                                }
-                                // console.log(list[i+1]);
-                                this.single=0
-                                this.options.push([{label: list[i].upperSort.sortName, value: list[i].upperSort.id, seen: false, children: children},{label: list[i+1].upperSort.sortName, value: list[i+1].upperSort.id, seen: false, children: children1}])
-                            }
-                        }
-                        else {
-                            for (let i = 0; i < list.length-1; i=i+2) {
-                                let children = [];
-                                if (list[i].children != null && list[i].children.length > 0) {
-                                    for (let j = 0; j < list[i].children.length; j++) {
-                                        children.push({label: list[i].children[j].sortName, value: list[i].children[j].id});
-                                    }
-                                }
-                                // console.log(list[i]);
-
-                                let children1 = [];
-                                if (list[i+1].children != null && list[i+1].children.length > 0) {
-                                    for (let j = 0; j < list[i+1].children.length; j++) {
-                                        children1.push({label: list[i+1].children[j].sortName, value: list[i+1].children[j].id});
-                                    }
-                                }
-                                // console.log(list[i+1]);
-
-                                this.options.push([{label: list[i].upperSort.sortName, value: list[i].upperSort.id, seen: false, children: children},{label: list[i+1].upperSort.sortName, value: list[i+1].upperSort.id, seen: false, children: children1}])
-                            }
-                            let children2 = [];
-                            if (list[list.length-1].children != null && list[list.length-1].children.length > 0) {
-                                for (let j = 0; j < list[list.length-1].children.length; j++) {
-                                    children2.push({label: list[list.length-1].children[j].sortName, value: list[list.length-1].children[j].id});
-                                }
-                            }
-                            this.options.push([{label: list[list.length-1].upperSort.sortName, value: list[list.length-1].upperSort.id, seen: false, children: children2}])
-                            this.single=1;
-                        }
-                    }
-                });
-            },
 
         },
         computed:{
@@ -245,8 +184,7 @@
             }
         },
         mounted(){
-            // this.getSortList();
-            this.getSortList();
+
         },
         created() {
             // this.getSortList();

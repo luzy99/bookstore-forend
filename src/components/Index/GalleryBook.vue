@@ -2,10 +2,10 @@
   <div class="gallery-book">
     <div class="gallery-book_list">
       <div class="gallery-book_card" v-for="item in bookList" :key="item.id">
-        <router-link :to="{path: '/book',query:{id:item.id}}">
+        <router-link :to="{path: '/book',query:{isbn:item.isbn}}">
         <el-image
           style="width: 82%; height: 190px;margin:5px 9%"
-          :src="item.coverImg"
+          :src="item.picture"
           fit="fill"></el-image>
         <div style="width: 86%;margin: 0px 7%">
           <a href="#" class="gallery-book_text">
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import {reqGetRecBookList} from "../../api/book";
+    import {reqGetBookList} from "../../api/book";
     export default {
         name: "GalleryBook",
         data(){
@@ -101,9 +101,9 @@
         },
         methods: {
             getBookList(){
-                reqGetRecBookList("newPut").then(response=>{
+                reqGetBookList(10).then(response=>{
                     if(response.errcode=='0'){
-                        this.bookList = response.bookList;
+                        this.bookList = response.data;
                     }else{
                         this.$message({
                             type: 'warning',

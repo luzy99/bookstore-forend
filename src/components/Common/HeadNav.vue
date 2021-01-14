@@ -12,6 +12,7 @@
             <el-option label="书名" value="1"></el-option>
             <el-option label="作者" value="2"></el-option>
             <el-option label="出版社" value="3"></el-option>
+            <el-option label="ISBN" value="4"></el-option>
           </el-select>
           <el-button slot="append" icon="el-icon-search" @click="onSubmit"></el-button>
         </el-input>

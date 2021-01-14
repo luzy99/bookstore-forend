@@ -119,7 +119,7 @@
 </template>
 
 <script>
-  import {reqDelFirstSort,reqDelSecondSort,reqGetFirstSortList,reqGetSecondSortList} from "../../../../../api/sort";
+  import {reqDelFirstSort,reqDelSecondSort} from "../../../../../api/sort";
 
   export default {
         name: "BookSort",
@@ -228,16 +228,6 @@
                     let upperName = this.$route.query.upperName;
                     console.log("跳转过来的upperName:"+upperName);
                     this.loading=false;
-                    reqGetSecondSortList(upperName,page,pageSize).then(response=>{
-                        if(response.errcode=='0'){
-                            this.total = response.total;
-                            console.log(this.total);
-                            this.tableData = response.bookSortList;
-                        }
-                        console.log(response);
-                    }).catch(err=>{
-                        console.log(err);
-                    })
                 }
             },
 
