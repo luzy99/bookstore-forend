@@ -28,6 +28,9 @@ import BuyPage from "../pages/BuyPage/BuyPage";
 import OrderDetail from "../components/AdminHome/orderNav/OrderDetail";
 import Deliver from "../components/AdminHome/orderNav/Deliver";
 import UserOrderDetail from "../components/UserHome/order/UserOrderDetail";
+import QA from "../pages/QA/QA"
+import About from "../pages/QA/About"
+
 
 Vue.use(Router)
 
@@ -231,8 +234,19 @@ export default new Router({
           path: "userOrderDetail",
           name: "UserOrderDetail",
           component: UserOrderDetail
-        }
+        },
+        
       ]
+    },
+    {
+      path: "/QA",
+      name: "QA",
+      component: QA
+    },
+    {
+      path: "/About",
+      name: "About",
+      component: About
     },
     {
       path: '/book',
