@@ -47,10 +47,9 @@
             return {
                 current: 0,//当前显示哪一个卡片
                 bookSortList:[],
-                imgS: ["static/image/bookdefault.jpg",
+                imgS: [
                     "static/image/21.jpg",
-                    "static/image/22.jpg",
-                    "static/image/23.jpg"],
+                    "static/image/22.jpg"],
                 bookList:[ {
                     sortId: 1,
                     sortName: "灰阑中的叙述（增订本）灰阑中的叙述（增订本）灰阑中的叙述（增订本）",

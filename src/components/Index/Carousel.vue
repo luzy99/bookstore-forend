@@ -2,8 +2,7 @@
   <div class="content">
     <el-carousel :interval="5000" arrow="always" height="300px">
       <el-carousel-item v-for="item in imgList" :key="item.id">
-        <router-link :to="{path: '/bookTopic',query:{id:item.id}}">
-        <img v-bind:src="item.cover" alt="图片">
+        <img v-bind:src="item" alt="图片">
         </router-link>
       </el-carousel-item>
     </el-carousel>
@@ -21,10 +20,9 @@
         },
         data(){
             return{
-                imgS: ["static/image/20.jpg",
+                imgS: [
                     "static/image/21.jpg",
-                    "static/image/22.jpg",
-                    "static/image/23.jpg"]
+                    "static/image/22.jpg"]
             }
         },
         created() {

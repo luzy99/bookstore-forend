@@ -123,7 +123,7 @@
     height: 100vh;
     overflow: hidden;
     min-width: 1240px;
-    background-image: url("../../assets/image/15124.jpg");
+    background-image: url("../../assets/image/bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -moz-background-size: 100% 100%;

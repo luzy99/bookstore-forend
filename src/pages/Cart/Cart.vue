@@ -20,7 +20,7 @@
           align="center">
           <template slot-scope="scope">
             <el-image style="height: 120px"
-                      :src="scope.row.coverImg">
+                      :src="scope.row.picture">
               <div slot="error" class="image-slot">
                 <i class="el-icon-picture-outline"></i>
               </div>
@@ -105,62 +105,30 @@
             return{
                 account: "",
                 cartList:[{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
+                    picture: "static/image/bookdefault.jpg",
+                    bookName: '数据库原理',
+                    author: '王能斌',
                     price:200,
                     price: 180,
                     num:10,
                     sales: 1000
                 },{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
+                    picture: "static/image/bookdefault.jpg",
+                    bookName: '数据库',
+                    author: '王能斌',
                     price:200,
                     price: 180,
                     num:10,
                     sales: 1000
                 },{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
+                    picture: "https://bookshop-bucket.oss-cn-qingdao.aliyuncs.com/f661b1da-913c-4dcf-a39d-34705294e5ac.jpg",
+                    bookName: '算法导论',
+                    author: 'Thomas H.Corme',
                     price:200,
                     price: 180,
                     num:10,
                     sales: 1000
-                },{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
-                    price:200,
-                    price: 180,
-                    num:10,
-                    sales: 1000
-                },{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
-                    price:200,
-                    price: 180,
-                    num:10,
-                    sales: 1000
-                },{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
-                    price:200,
-                    price: 180,
-                    num:10,
-                    sales: 1000
-                },{
-                    coverImg: "static/image/bookdefault.jpg",
-                    bookName: '平凡的世界',
-                    author: '路遥',
-                    price:200,
-                    price: 180,
-                    num:10,
-                    sales: 1000
-                },
+                }
                 ],
                 multipleSelection: []
             }

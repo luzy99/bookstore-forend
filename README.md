@@ -1,4 +1,4 @@
-# bookstore_client
+# bookstore-forend
 
 > A Vue.js project
 

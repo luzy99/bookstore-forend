@@ -95,7 +95,7 @@
                   </div>
                 </div>
                 <div class="content_main_right">
-                  <Carousel :imgList="bookTopicList"></Carousel>
+                  <Carousel :imgList="imgS"></Carousel>
                   <div class="gallery-book_title">
                     <span>最新出版</span>
                   </div>
@@ -141,10 +141,9 @@
                 seen: false, //显示和隐藏
 
                 activeName: 'first',
-                imgS: ["static/image/bookdefault.jpg",
+                imgS: [
                     "static/image/21.jpg",
-                    "static/image/22.jpg",
-                    "static/image/23.jpg"],
+                    "static/image/22.jpg"],
                 bookSortList:['小说','文学','地理','教科书','生物','科学','地理','教科书','生物','教科书'],
                 options: [],
             };

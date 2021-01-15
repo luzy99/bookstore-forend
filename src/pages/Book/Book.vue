@@ -5,7 +5,7 @@
     <HeadNav></HeadNav>
     <div class="box book_box">
       <div class="book_img">
-        <CarouselBtn :imgList="book.imgSrc"></CarouselBtn>
+        <CarouselBtn :imgList="[book.Picture]"></CarouselBtn>
       </div>
       <div class="book_buy">
         <div class="book_name">{{book.BookName}}</div>
@@ -116,10 +116,6 @@
                 // console.log(tab, event);
             },
 
-            getSortList() {
-
-            },
-
             getBook(bookId){
                 reqGetBook(bookId).then(response=>{
                     // console.log(response.book);
@@ -174,7 +170,6 @@
             this.bookId = this.$route.query.isbn;
             // console.log("this.bookId"+this.bookId);
             this.getBook(this.bookId);
-            this.getSortList();
             // let account = this.$store.getters.getUser.account;
             // console.log("====account==="+account+"==============")
         }

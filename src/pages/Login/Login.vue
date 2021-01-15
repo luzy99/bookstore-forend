@@ -128,7 +128,7 @@
     min-width: 1240px;
     overflow: hidden;
     background-color: #B3C0D1;
-    background-image: url("../../assets/image/15124.jpg");
+    background-image: url("../../assets/image/bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -moz-background-size: 100% 100%;

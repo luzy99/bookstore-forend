@@ -74,9 +74,6 @@
             handleClick(tab, event) {
                 console.log(tab, event);
             },
-            getSortList() {
-
-            },
             //得到图书列表
             getBookList(type,kw){
                 reqGetBookList(type,kw).then(response=>{

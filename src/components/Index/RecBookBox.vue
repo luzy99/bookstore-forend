@@ -9,7 +9,7 @@
         <router-link :to="{path: '/book',query:{id:item.id}}">
         <el-image
           style="width: 82%; height: 190px;margin:5px 9%"
-          :src="item.coverImg"
+          :src="item.picture==''?this.img: item.picture"
           fit="fill"></el-image>
         <div style="width: 86%;margin: 0px 7%">
           <a href="#" class="gallery-book_text">
@@ -42,10 +42,7 @@
             return {
                 sortTitle:"",
                 bookSortList:[],
-                imgS: ["static/image/bookdefault.jpg",
-                    "static/image/21.jpg",
-                    "static/image/22.jpg",
-                    "static/image/23.jpg"],
+                img:"static/image/bookdefault.jpg",
                 bookList: [],
             }
         },

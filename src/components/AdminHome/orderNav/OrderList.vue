@@ -263,7 +263,6 @@
             }
         },
         created:function () {
-            this.getPublishName();
             this.getOrderList(1,5);
             console.log("init起作用了！")
         },
@@ -436,16 +435,6 @@
                 });
             },
 
-
-            //得到并设置出版的下拉选择器
-            getPublishName(){
-                reqGetPublishNames().then(response=>{
-                    console.log(response);
-                    this.publishList=response.publishList;
-                }).then(err=>{
-                    console.log(err);
-                })
-            }
         }
 
     }

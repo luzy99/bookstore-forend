@@ -15,7 +15,7 @@ export const reqAddOrder = (orderInitDto) => ajax(BASE_URL+"/addOrder", {
 },"POST")
 
 //管理员得到订单列表
-export const reqAdminGetOrderList = (page,pageSize) => ajax(BASE_URL+"/getAdminOrderList",{page,pageSize})
+export const reqAdminGetOrderList = (page,pageSize) => ajax(BASE_URL+"/getOrderList",{page,pageSize})
 
 //管理员得到订单的明细getOrderDto
 export const reqAdminGetOrderDetail = (id) => ajax(BASE_URL+"/getOrderDto",{id})

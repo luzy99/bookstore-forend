@@ -31,10 +31,9 @@
         name: "GalleryBook",
         data(){
             return {
-                imgS: ["static/image/bookdefault.jpg",
+                imgS: [
                     "static/image/21.jpg",
-                    "static/image/22.jpg",
-                    "static/image/23.jpg"],
+                    "static/image/22.jpg",],
                 bookList: [
                     {
                         id: 1,

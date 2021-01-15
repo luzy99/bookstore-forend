@@ -322,16 +322,6 @@
             },
 
 
-            //得到并设置出版的下拉选择器
-            getPublishName(){
-                reqGetPublishNames().then(response=>{
-                    console.log(response);
-                    this.publishList=response.publishList;
-                    this.book.publish=this.publishList[0];
-                }).then(err=>{
-                    console.log(err);
-                })
-            },
 
             //得到图书的相册集
             getBookImgPathList(){
@@ -348,8 +338,6 @@
 
         },
         created() {
-            this.getPublishName();
-            this.getSortList();
             this.initMyHeader();
             if(this.isEdit){
                 let id = this.$route.query.id;
